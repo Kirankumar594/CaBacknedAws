@@ -24,6 +24,14 @@ app.use('/api/news', newsRoutes);
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
+}); 
+ 
+app.use(express.static(path.join(__dirname, 'build'))); // Change 'build' to your frontend folder if needed
+
+// Redirect all requests to the index.html file
+
+app.get("*", (req, res) => {
+  return  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 const PORT = process.env.PORT;      
