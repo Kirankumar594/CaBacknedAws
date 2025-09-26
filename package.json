@@ -14,12 +14,8 @@
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
-<<<<<<< HEAD
-    "express": "^4.18.0",
-=======
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
->>>>>>> 4ce8090be7383ff6facda38e1ae323ba0d9df1c9
     "fs": "^0.0.1-security",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.18.0",
