@@ -39,11 +39,28 @@ const login = async (req, res) => {
 
 const logout = async (req, res) => {
   try {
+<<<<<<< HEAD
     const admin = await Admin.findById(req.admin._id);
+=======
+    // Add validation for req.admin
+    if (!req.admin || !req.admin._id) {
+      return res.status(401).json({ error: 'Admin not authenticated' });
+    }
+
+    const admin = await Admin.findById(req.admin._id);
+    if (!admin) {
+      return res.status(404).json({ error: 'Admin not found' });
+    }
+    
+>>>>>>> 4ce8090be7383ff6facda38e1ae323ba0d9df1c9
     admin.isLoggedIn = false;
     await admin.save();
     res.json({ message: 'Logged out successfully' });
   } catch (err) {
+<<<<<<< HEAD
+=======
+    console.error('Logout error:', err);
+>>>>>>> 4ce8090be7383ff6facda38e1ae323ba0d9df1c9
     res.status(500).json({ error: err.message });
   }
 };
