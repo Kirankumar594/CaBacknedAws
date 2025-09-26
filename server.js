@@ -9,8 +9,8 @@ const path = require('path');
 
 const app = express();
 
-// Connect to database
-connectDB();
+
+
 
 // Middleware
 app.use(cors());
@@ -27,7 +27,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong!' });
 });
-
+connectDB();
 const PORT = process.env.PORT;      
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
